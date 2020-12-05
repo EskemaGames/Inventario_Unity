@@ -39,7 +39,7 @@ namespace eskemagames
 
                 _items.Clear();
 
-                for (var i = 0; i < aList.Count; i++)
+                for (var i = 0; i < aList.Count; ++i)
                 {
                     _items.Add(aList[i]);
                 }
@@ -58,7 +58,7 @@ namespace eskemagames
             //like arrows, etc
             public void RestoreMaxValue()
             {
-                for (var i = 0; i < _items.Count; i++)
+                for (var i = 0; i < _items.Count; ++i)
                 {
                     _items[i].RestoreInitialValue();
                 }
@@ -66,9 +66,15 @@ namespace eskemagames
 
             
             #region public API
+
+            public void DeleteAllItems()
+            {
+                _items.Clear();
+            }
+            
             public void DeleteItem(Item item)
             {
-                for (var i = 0; i < _items.Count; i++)
+                for (var i = 0; i < _items.Count; ++i)
                 {
                     if (_items[i].objectId != item.objectId) continue;
                     
@@ -130,7 +136,7 @@ namespace eskemagames
             {
                 var wasAdded = false;
                     
-                for (var i = 0; i < _items.Count; i++)
+                for (var i = 0; i < _items.Count; ++i)
                 {
                     var o = _items[i];
 

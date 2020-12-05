@@ -18,7 +18,7 @@ namespace eskemagames
                 return new Potion(this);
             }
 
-            public Potion(Item sk) : base(sk) { }
+            public Potion(Item item) : base(item) { }
 
         }
     }

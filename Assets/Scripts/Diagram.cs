@@ -1,0 +1,23 @@
+﻿// OVERALL OVERVIEW OF OBJECTS AND FLOW
+//
+// CLASSES FOR DATA
+// -------------------------------------
+// ITEM STATS
+// ITEM DATA
+// ITEM
+// INVENTORY
+// -------------------------------------
+// CLASSES FOR CONTROLLERS
+// INVENTORY CONTROLLER
+// -------------------------------------
+// CLASSES FOR VIEW
+// ITEM UI
+//
+// RELATIONSHIP OF CLASSES AS FOLLOWS
+//
+// ITEM -> ITEM DATA -> ITEM STATS (LIST OF ATTRIBUTES)
+//
+// INVENTORY -> ITEMS (LIST)
+//
+// ITEM UI
+// INVENTORY CONTROLLER -> ITEM UI (LIST)

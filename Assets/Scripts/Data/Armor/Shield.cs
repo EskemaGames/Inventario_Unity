@@ -18,7 +18,7 @@ namespace eskemagames
                 return new Shield(this);
             }
 
-            public Shield(Item sk) : base(sk) { }
+            public Shield(Item item) : base(item) { }
 
         }
     }

@@ -18,7 +18,7 @@ namespace eskemagames
                 return new Sword(this);
             }
 
-            public Sword(Item sk) : base(sk) { }
+            public Sword(Item item) : base(item) { }
 
         }
     }

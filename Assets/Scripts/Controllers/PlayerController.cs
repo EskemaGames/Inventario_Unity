@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
     private Inventory _inventory = new Inventory();
 
     private int strength = 10;
+    //other stats for your player character
+    
     
     public Inventory GetInventory
     {
@@ -15,10 +17,13 @@ public class PlayerController : MonoBehaviour
     public void Init(Inventory inventory)
     {
         _inventory = inventory;
-        //other stuff for your player
+        //other init stuff for your player goes here...
     }
 
 
+    
+    #region inventory management
+    
     public GameEnums.InventoryCodeStatus AddItemsToInventory(Item item)
     {
         return _inventory.AddItem(item);
@@ -28,13 +33,36 @@ public class PlayerController : MonoBehaviour
     {
         _inventory.DeleteItem(item);
     }
-
-
-    public void UpdateInventory()
+    
+    public void DeleteAllItemsFromInventory()
     {
-        for (int i = 0; i < _inventory.items.Count; i++)
+        _inventory.DeleteAllItems();
+    }
+
+    public void EquipItem(uint id)
+    {
+        for (var i = 0; i < _inventory.items.Count; ++i)
         {
-            
+            if (_inventory.items[i].objectId == id)
+            {
+                _inventory.items[i].SetEquipped(true);
+                break;
+            }
         }
     }
+    
+    public void UnEquipItem(uint id)
+    {
+        for (var i = 0; i < _inventory.items.Count; ++i)
+        {
+            if (_inventory.items[i].objectId == id)
+            {
+                _inventory.items[i].SetEquipped(false);
+                break;
+            }
+        }
+    }
+    
+    #endregion
+    
 }

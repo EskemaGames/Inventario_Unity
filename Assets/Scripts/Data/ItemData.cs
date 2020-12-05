@@ -40,7 +40,7 @@ namespace eskemagames
                 maxAmount = aMaxAmount;
                 amount = anAmount;
                 
-                for (int i = 0; i < aStats.Count; i++)
+                for (var i = 0; i < aStats.Count; ++i)
                 {
                     _stats.Add(aStats[i]);
                 }

@@ -1,4 +1,5 @@
-﻿using eskemagames;
+﻿using System;
+using eskemagames;
 using eskemagames.eskemagames.data;
 using UnityEngine;
 
@@ -14,10 +15,34 @@ public class TestInventory : MonoBehaviour
     private Item _itemArrow = null;
 
 
+    private void Start()
+    {
+        inventoryViewController.SetCallbacks(OnItemEquipped);
+    }
+
+
+
+    #region callbacks from inventory view controller
+    private void OnItemEquipped(uint id, bool isEquipped)
+    {
+        if (isEquipped)
+        {
+            _playerController.EquipItem(id);
+        }
+        else
+        {
+            _playerController.UnEquipItem(id);
+        }
+    }
+    #endregion
+    
+
     [ContextMenu("Fill inventory with random items")]
     private void FillItemsScreen()
     {
         var _playerLevelExample = 2;
+        
+        _playerController.DeleteAllItemsFromInventory();
         
         //let's create 15 items to fill the inventory on screen
         for (var i = 0; i < totalObjects; i++)

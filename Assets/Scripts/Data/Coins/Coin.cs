@@ -18,7 +18,7 @@ namespace eskemagames
                 return new Coin(this);
             }
 
-            public Coin(Item sk) : base(sk) { }
+            public Coin(Item item) : base(item) { }
 
         }
     }

@@ -28,6 +28,8 @@ namespace eskemagames
 
             uint id = IdGenerator.GetId();
             var argTypeInstruction = new object[] {price, tmpLevel, id,  quality, itData};
+            
+            //set the namespace path, otherwise the class will not be instantiated
             var item = CreateInstance<Item>("eskemagames.eskemagames.data.", objClassName, argTypeInstruction);
 
             return item;

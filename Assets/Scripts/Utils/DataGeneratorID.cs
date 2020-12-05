@@ -1,4 +1,6 @@
-﻿public static class IdGenerator
+﻿using UnityEngine;
+
+public static class IdGenerator
 {
     private static uint _id = 0;
 
@@ -8,7 +10,7 @@
         
         if (_id > uint.MaxValue)
         {
-            _id = 0;
+            _id = 1;
         }
 
         return _id;

@@ -18,7 +18,7 @@ namespace eskemagames
                 return new Arrow(this);
             }
 
-            public Arrow(Item sk) : base(sk) { }
+            public Arrow(Item item) : base(item) { }
 
         }
     }

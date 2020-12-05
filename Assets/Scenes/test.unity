@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryViewController: {fileID: 1608633231}
-  totalObjects: 15
+  totalObjects: 12
   _playerController: {fileID: 1028523462}
 --- !u!1 &1028523461
 GameObject:
@@ -669,6 +669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemUIPrefab: {fileID: 184508, guid: 19d394a24eba875459274a9e77d6cb68, type: 3}
   grid: {fileID: 1492121067}
+  totalItemsPooled: 20
 --- !u!4 &1608633232
 Transform:
   m_ObjectHideFlags: 0

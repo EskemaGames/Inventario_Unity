@@ -14,16 +14,35 @@ public class ItemUI : MonoBehaviour
     private bool _selected = false;
     private bool _equipped = false;
     private GameObject _go = null;
+    private uint id = 0;
+    
+    public uint GetId
+    {
+        get { return id; }
+    }
 
-
-    public void Init(string title, string description, string price, string amount, string imgName)
+    public void Init(uint id, string title, string description, string price, string amount, string imgName)
     {
         _go = this.gameObject;
+        this.id = id;
         this.title.text = title;
         this.description.text = description;
         this.price.text = price;
         this.amount.text = amount;
         image.spriteName = imgName;
+    }
+    
+    public void InitEmpty()
+    {
+        _go = this.gameObject;
+        id = 0;
+        title.text = "";
+        description.text = "";
+        price.text = "";
+        amount.text = "";
+        image.spriteName = "";
+        
+        SetInactive();
     }
 
 
@@ -37,10 +56,17 @@ public class ItemUI : MonoBehaviour
         _go.SetActive(false);
     }
 
+    public void ResetItem()
+    {
+        id = 0;
+    }
+
 
     public void SetSelected()
     {
         _selected = true;
+        //PlaySound("SOUND_SELECTED");
+        //Particles.Spawn();
     }
 
     public void SetDeselected()
@@ -52,6 +78,8 @@ public class ItemUI : MonoBehaviour
     public void SetEquipped()
     {
         _equipped = true;
+        //PlaySound("SOUND_EQUIPPED");
+        //Particles.Spawn();
     }
 
     public void SetUnequipped()

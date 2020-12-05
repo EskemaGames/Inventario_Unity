@@ -20,8 +20,8 @@ public class GameEnums
 
     [System.Serializable]
     public enum AttributesType {
-        STRENGTH,
-        MIND,
+        STRENGTH = 0,
+        MIND = 1,
         DEFENSE,
         AGILITY,
         HEALTH,
